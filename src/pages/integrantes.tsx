@@ -56,7 +56,7 @@ export default function Integrantes() {
           <h4>Ruan Luca Feliciano de Carvalho</h4>
           <p>559567 | 1TDSA</p>
           <div className="botoes-links">
-            <a href="https://www.linkedin.com/in/melissa-etes-10184925b/" className="linkedin">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/ruan-luca-feliciano-de-carvalho-a36905267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" className="linkedin">LinkedIn</a>
             <a href="https://github.com/Melissa-Etes" className="github">GitHub</a>
           </div>
         </div>
