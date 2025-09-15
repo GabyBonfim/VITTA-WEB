@@ -1,0 +1,739 @@
+/* FAQ */
+.faq-container {
+  max-width: 700px;
+  width: 90%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.faq-container h2 {
+  color: #4f2c75;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.faq-card {
+  background-color: #f4f0e7;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.faq-card p {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+/* Suporte / Ajuda */
+.suporte-container {
+  max-width: 700px;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.suporte-container h2 {
+  color: #4f2c75;
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.suporte-email-card {
+  background-color: #f4f0e7;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.email-box {
+  background-color: #a08ac2;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 40px;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.suporte-form {
+  background-color: #f4f0e7;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.suporte-form label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.suporte-form textarea {
+  width: 100%;
+  border: 1px solid #390147;
+  border-radius: 15px;
+  padding: 15px;
+  resize: none;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.suporte-botoes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.botao-upload {
+  background-color: #a08ac2;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.botao-upload input[type="file"] {
+  display: none;
+}
+
+.suporte-form button {
+  background-color: #4f2c75;
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.suporte-form button:hover {
+  background-color: #3e225f;
+}
+
+/* Sobre nós */
+.sobre-container {
+  max-width: 1100px;
+  width: 90%;
+  margin: 30px  auto;
+  padding: 0 10px;
+}
+
+  
+.sobre-topo {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 50px;
+  width: 100%;
+  
+}
+
+.sobre-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 400px;
+}
+
+.sobre-logo img {
+  width: 100%;
+  max-width: 180px;
+  margin-bottom: 10px;
+}
+
+.slogan {
+  background-color: #ffffff;
+  color: #722bbd;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 14px;
+  width: fit-content;
+}
+
+.sobre-texto {
+  background-color: #f4f0e7;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-texto h3 {
+  color: #722bbd;
+  margin-bottom: 10px;
+}
+
+.integrantes-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.card-integrante {
+  background-color: #f4f0e7;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 277px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.card-integrante img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.card-integrante h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.card-integrante p {
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.botoes-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.botoes-links a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 0;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.linkedin {
+  background-color: #4f2c75;
+}
+
+.github {
+  background-color: #000;
+}
+
+.container-logo-slogan-texto{
+  padding: 40px;
+  background-color: #7b4ce0;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.card-integrante:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Triagem pt. 1 */
+.triagem-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.triagem-container h2 {
+  color: #4f2c75;
+  margin-bottom: 10px;
+}
+
+.triagem-container p {
+  color: #1a1233;
+  margin-bottom: 30px;
+}
+
+.boneco-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+}
+
+.boneco-container img {
+  width: 100%;
+  height: auto;
+  margin-left: 0;
+  border-radius: 10px;
+}
+
+/* Bolinha vermelha */
+.bolinha {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: red;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+  animation: pop 0.2s ease forwards;
+}
+
+@keyframes pop {
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.btn-continuar {
+  margin-top: 30px;
+  background-color: #4f2c75;
+  color: white;
+  padding: 10px 30px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn-continuar:hover {
+  background-color: #b494d8;
+  color: #000;
+}
+
+/* Triagem pt. 2 */
+.triagemd-titulo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.triagemd-titulo h2 {
+  color: #3b2e58;
+  margin-bottom: 5px;
+}
+
+.triagemd-titulo p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.triagemd-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.triagemd-box p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.triagemd-box label {
+  display: block;
+  margin: 5px 0;
+}
+
+.triagemd-range {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.triagemd-textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.triagemd-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.triagemd-box-small {
+  flex: 1;
+  min-width: 120px;
+}
+
+.triagemd-button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.triagemd-button button {
+  background-color: #6b4fa0;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.triagemd-button button:hover {
+  background-color: #5a4191;
+}
+
+.main-triagemd {
+  max-width: 500px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Alerta da triagem */
+
+.container-notificacoes{          
+  margin: 50px 500px 0px;    
+  margin-bottom: 200px;  
+  padding: 0 20px;  
+  display: block;
+  align-items: center;
+}
+.mensagem {
+  background-color: #722bbd;
+  color: white;
+  padding: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.09);
+  margin-top: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.btn-triagemb {
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  color: #000;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.09);
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.btn-triagemb:hover {
+  background-color: #b098e2;
+  color: white;
+}
+
+
+/* Styles página de informativos*/
+.cards-informativos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.card-saude-digital,
+.card-primeiro-acesso,.card-tutorial {
+  background-color: #f2e794;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card-saude-digital:hover,
+.card-primeiro-acesso:hover,.card-tutorial {
+  transform: scale(1.02);
+}
+
+.card-saude-digital h2,
+.card-primeiro-acesso h2 {
+  color: #4f2c75;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.card-saude-digital p,
+.card-primeiro-acesso p,.card-tutorial {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.card-saude-digital .intro {
+  font-weight: bold;
+  color: #000;
+}
+
+.card-saude-digital hr,
+.card-primeiro-acesso hr {
+  border: none;
+  border-top: 1px solid #aaa;
+  margin: 20px 0;
+}
+
+.passos-teleconsulta {
+  background-color: #f4f0e7;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: 20px auto;
+  line-height: 1.6;
+  color: #333;
+  font-size: 1rem;
+}
+
+.passos-teleconsulta li {
+  margin-bottom: 15px;
+}
+.btn-portal-paciente{
+  background-color: #4f2c75;
+  max-width: 200px;
+  text-align: center;
+  border-radius: 10px;
+  height: 50px;
+  padding: 15px;
+  color: white;
+}
+
+.btn-portal-paciente:hover{
+  background-color: black;
+  color: white;
+}
+
+.btn-tutorial{
+  background-color: #4f2c75;
+  max-width: 200px;
+  text-align: center;
+  border-radius: 10px;
+  height: 50px;
+  padding: 15px;
+  color: white;
+  margin-top: 20px;
+}
+
+.btn-tutorial:hover{
+  background-color: black;
+  color: white;
+}
+
+.barra-pesquisa {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.barra-pesquisa input {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 2px solid #9583B6;
+  border-radius: 10px;
+  outline: none;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+/*Styles monitoramento page */
+
+.monitoramento-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.monitoramento-container h2 {
+  text-align: center;
+  color: #4f2c75;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="number"],
+select {
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: border 0.3s ease;
+}
+
+input[type="number"]:focus,
+select:focus {
+  border-color: #9583B6;
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: #9583B6;
+  color: white;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #7e68a6;
+}
+
+#campoGlicemia {
+  animation: fadeIn 0.3s ease;
+}
+
+/*Styles cadastro e login*/
+
+#login-cadastro {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #9583b6;
+  color: #2d1457;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-height: 80px;
+}
+
+.form-card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.form-card h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2d1457;
+}
+
+.form-card label {
+  font-weight: bold;
+  display: block;
+  margin-top: 16px;
+  font-size: 0.85rem;
+}
+
+.form-card input,
+.form-card select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-card button {
+  margin-top: 24px;
+  width: 100%;
+  background-color: #4f2c75;
+  color: white;
+  padding: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form-card button:hover {
+  background-color: #3e2261;
+}
+
+.link-cadastro {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #4f2c75;
+  text-decoration: none;
+}
+
+.link-cadastro:hover {
+  text-decoration: underline;
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background-color: #f4f4f4;
+}
+
+.btn-top {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+

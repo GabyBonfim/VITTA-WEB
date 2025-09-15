@@ -1,0 +1,162 @@
+body {
+  background-color: #fdfcf8;
+  font-family: Arial, sans-serif;
+  color: #222;
+  margin: 0;
+}
+
+.main-home {
+  width: 90%;              
+  margin: 50px;      
+  padding: 0 20px;  
+  display: block;
+  align-items: center;
+}
+
+.corpo-home{
+  padding: 0px 100px 100px 100px;
+}
+
+/* --- Notícia --- */
+.noticia-home {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  max-width: 100%; /* ocupa só até a largura do container */
+}
+
+.img-noticia-home {
+  width: 250px;
+  border-radius: 10px;
+}
+
+.texto-noticia-home h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.btn-materia-home {
+  display: inline-block;
+  background: #7b4ce0;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.btn-materia-home:hover {
+  background: #592ab8;
+}
+
+/* --- Usuário + Saúde --- */
+.conteudo-home {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.card-usuario-home {
+  background: #cbb6f5;
+  padding: 20px;
+  border-radius: 15px;
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.img-usuario-home {
+  width: 100px;
+}
+
+.card-usuario-home h3 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-saude-home {
+  background: #fff5e6;
+  padding: 20px;
+  border-radius: 15px;
+  flex: 1;
+  min-width: 280px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-saude-home ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card-saude-home li {
+  background: #f9dba6;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* --- Acessos rápidos --- */
+.acessos-home {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-acesso-home {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  border-radius: 15px;
+  padding: 30px;
+  color: #fff;
+  text-align: justify;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  
+}
+
+.card-acesso-home h4 {
+  margin-bottom: 10px;
+}
+
+.card-acesso-home p {
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.card-acesso-home button {
+  background: #ffcd29;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.card-acesso-home button:hover {
+  background: #e5b800;
+}
+
+.card-acesso-home.verde {
+  background: #7b4ce0;
+  
+}
+
+.card-acesso-home.azul {
+  background: #7b4ce0;
+}
+
+.card-acesso-home.ciano {
+  background: #7b4ce0;
+}
