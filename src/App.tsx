@@ -8,6 +8,7 @@ import Monitoramento from "./pages/monitoramento";
 import Notificacoes from "./pages/notificacoes";
 import Triagem from "./pages/triagem";
 import Triagemd from "./pages/triagemd";
+import './App.css'
 
 
 export default function App() {
