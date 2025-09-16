@@ -12,11 +12,7 @@ export default function Homepage() {
       <main className="w-[90%] mx-auto my-12 px-5">
         {/* Notícia */}
         <section className="bg-white flex items-center gap-5 rounded-xl p-5 shadow-md mb-10 max-w-full">
-          <img
-            src="/images/noticia.png"
-            alt="Notícia"
-            className="w-[250px] rounded-lg"
-          />
+          <img src="/images/noticia.png" alt="Notícia" className="w-[250px] rounded-lg"/>
           <div>
             <h3 className="text-lg font-semibold mb-2">
               Busca por atendimentos em saúde mental cresce após a pandemia
@@ -25,8 +21,7 @@ export default function Homepage() {
               Em Ribeirão Preto, número de atendimentos em saúde mental já passa
               de 200 mil por ano
             </p>
-            <a
-              href="#"
+            <a href="#"
               className="inline-block bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-800 transition"
             >
               Ver matéria
@@ -38,11 +33,8 @@ export default function Homepage() {
         <div className="flex flex-wrap gap-8 mb-10 justify-center">
           {/* Card Usuário */}
           <div className="bg-purple-200 p-5 rounded-2xl flex items-center gap-4 shadow-md flex-1 min-w-[280px]">
-            <img
-              src="/images/user-icon.png"
-              alt="Mascote"
-              className="w-[100px]"
-            />
+            <img src="/images/user-icon.png" alt="Mascote" className="w-[100px]" />
+            
             <div>
               <h3 className="font-bold mb-1">Mirelly Sousa</h3>
               <p>Nascido(a) em: 16/05/2006</p>
