@@ -1,7 +1,8 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { Link } from "react-router-dom";
-import "../assets/css/geral.css";
+
+{/*import "../assets/css/geral.css";*/}
     
     export default function Notificacoes() {
       return (

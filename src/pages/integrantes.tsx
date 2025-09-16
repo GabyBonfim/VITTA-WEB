@@ -12,7 +12,7 @@ export default function Integrantes() {
       <div className="container-logo-slogan-texto">
         <div className="sobre-topo">
           <div className="sobre-logo">
-            <img src="images/imagotipo-vitta.png" alt="Logo Vitta" />
+            <img src="images/vittahc (1).png" alt="Logo Vitta" />
             <p className="slogan">Saúde que se conecta com você.</p>
           </div>
 
