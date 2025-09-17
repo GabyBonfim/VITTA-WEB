@@ -6,30 +6,44 @@ export default function Ajuda() {
     <>
       <Navbar />
       <main>
-        <div className="suporte-container">
-          <h2>Suporte a você</h2>
+        <div className="max-w-[700px] w-[90%] mx-auto text-center">
+          <h2 className="text-purple-900 text-xl mb-8">Suporte a você</h2>
 
-          <div className="suporte-email-card">
+          {/* Card de e-mail */}
+          <div className="bg-[#f4f0e7] p-5 rounded-2xl shadow-md mb-8">
             <p>Você pode nos contatar através do nosso EMAIL:</p>
-            <div className="email-box">FAQVittaweb@gmail.com</div>
+            <div className="bg-[#7b4ce0] text-white font-bold px-5 py-2 rounded-full inline-block mt-4">
+              FAQVittaweb@gmail.com
+            </div>
           </div>
 
+          {/* Formulário de suporte */}
           <form
-            className="suporte-form"
+            className="bg-[#f4f0e7] p-6 rounded-2xl shadow-md text-left"
             onSubmit={(e) => {
               e.preventDefault();
               alert("Mensagem enviada com sucesso!");
             }}
           >
-            <label htmlFor="mensagem">
+            <label htmlFor="mensagem" className="block mb-4 text-base">
               Descreva abaixo os problemas que você está enfrentando ao utilizar nosso site.
               Busque detalhar o problema enfrentado, se possível anexe uma imagem do problema (um print da tela).
             </label>
 
-            <textarea id="mensagem" name="mensagem" required></textarea>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              required
+              className="w-full border border-[#390147] rounded-xl p-4 resize-none text-sm mb-5 shadow-inner focus:outline-none focus:ring-2 focus:ring-purple-700"
+              rows={5}
+            ></textarea>
 
-            <div className="suporte-botoes">
-              <label htmlFor="print" className="botao-upload">
+            <div className="flex justify-between flex-wrap gap-3">
+              {/* Botão de upload */}
+              <label
+                htmlFor="print"
+                className="bg-[#7b4ce0] text-white font-bold px-5 py-2 rounded-xl flex items-center gap-2 cursor-pointer hover:bg-[#8e79af] transition-colors"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -43,7 +57,13 @@ export default function Ajuda() {
                 <input type="file" id="print" name="print" accept="image/*" hidden />
               </label>
 
-              <button type="submit">Enviar</button>
+              {/* Botão de enviar */}
+              <button
+                type="submit"
+                className="bg-purple-900 text-white px-6 py-2 rounded-xl font-bold hover:bg-[#7b4ce0] transition-colors"
+              >
+                Enviar
+              </button>
             </div>
           </form>
         </div>

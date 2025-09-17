@@ -9,79 +9,113 @@ export default function Monitoramento() {
   const [respiracao, setRespiracao] = useState("normal");
   const [batimentos, setBatimentos] = useState("normal");
 
-const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  console.log({
-    pressao,
-    temDiabetes,
-    glicemia,
-    respiracao,
-    batimentos,
-  });
-  alert("Monitoramento enviado com sucesso!");
-};
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log({ pressao, temDiabetes, glicemia, respiracao, batimentos });
+    alert("Monitoramento enviado com sucesso!");
+  };
 
   return (
     <>
       <Navbar />
-      <main className="monitoramento-container">
-        <h2>Preencha seu monitoramento de hoje</h2>
+      <main className="max-w-xl mx-auto my-12 bg-white p-10 rounded-2xl shadow-lg">
+        <h2 className="text-center text-purple-800 text-2xl font-bold mb-8">
+          Preencha seu monitoramento de hoje
+        </h2>
 
-        <form id="form-monitoramento" onSubmit={handleSubmit}>
-          <label htmlFor="pressao">Pressão arterial (mmHg):</label>
-          <input
-            type="number"
-            id="pressao"
-            value={pressao}
-            onChange={(e) => setPressao(e.target.value)}
-            required
-          />
+        <form
+          id="form-monitoramento"
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-6"
+        >
+          {/* Pressão arterial */}
+          <div className="flex flex-col">
+            <label htmlFor="pressao" className="font-semibold text-gray-700">
+              Pressão arterial (mmHg):
+            </label>
+            <input
+              type="number"
+              id="pressao"
+              value={pressao}
+              onChange={(e) => setPressao(e.target.value)}
+              required
+              className="p-3 border-2 border-gray-300 rounded-xl bg-gray-50 text-base focus:outline-none focus:border-purple-400 transition"
+            />
+          </div>
 
-          <label htmlFor="temDiabetes">Você tem diabetes?</label>
-          <select
-            id="temDiabetes"
-            value={temDiabetes}
-            onChange={(e) => setTemDiabetes(e.target.value)}
-          >
-            <option value="nao">Não</option>
-            <option value="sim">Sim</option>
-          </select>
+          {/* Tem diabetes */}
+          <div className="flex flex-col">
+            <label htmlFor="temDiabetes" className="font-semibold text-gray-700">
+              Você tem diabetes?
+            </label>
+            <select
+              id="temDiabetes"
+              value={temDiabetes}
+              onChange={(e) => setTemDiabetes(e.target.value)}
+              className="p-3 border-2 border-gray-300 rounded-xl bg-gray-50 text-base focus:outline-none focus:border-purple-400 transition"
+            >
+              <option value="nao">Não</option>
+              <option value="sim">Sim</option>
+            </select>
+          </div>
 
+          {/* Campo glicemia - aparece só se "sim" */}
           {temDiabetes === "sim" && (
-            <div id="campoGlicemia">
-              <label htmlFor="glicemia">Glicemia (mg/dL):</label>
+            <div className="flex flex-col animate-fadeIn">
+              <label htmlFor="glicemia" className="font-semibold text-gray-700">
+                Glicemia (mg/dL):
+              </label>
               <input
                 type="number"
                 id="glicemia"
                 value={glicemia}
                 onChange={(e) => setGlicemia(e.target.value)}
+                className="p-3 border-2 border-gray-300 rounded-xl bg-gray-50 text-base focus:outline-none focus:border-purple-400 transition"
               />
             </div>
           )}
 
-          <label htmlFor="respiracao">Como está sua respiração?</label>
-          <select
-            id="respiracao"
-            value={respiracao}
-            onChange={(e) => setRespiracao(e.target.value)}
-          >
-            <option value="normal">Normal</option>
-            <option value="irregular">Irregular</option>
-            <option value="difícil">Difícil</option>
-          </select>
+          {/* Respiração */}
+          <div className="flex flex-col">
+            <label htmlFor="respiracao" className="font-semibold text-gray-700">
+              Como está sua respiração?
+            </label>
+            <select
+              id="respiracao"
+              value={respiracao}
+              onChange={(e) => setRespiracao(e.target.value)}
+              className="p-3 border-2 border-gray-300 rounded-xl bg-gray-50 text-base focus:outline-none focus:border-purple-400 transition"
+            >
+              <option value="normal">Normal</option>
+              <option value="irregular">Irregular</option>
+              <option value="difícil">Difícil</option>
+            </select>
+          </div>
 
-          <label htmlFor="batimentos">Como estão seus batimentos cardíacos?</label>
-          <select
-            id="batimentos"
-            value={batimentos}
-            onChange={(e) => setBatimentos(e.target.value)}
-          >
-            <option value="normal">Normal</option>
-            <option value="acelerado">Acelerado</option>
-            <option value="lento">Lento</option>
-          </select>
+          {/* Batimentos */}
+          <div className="flex flex-col">
+            <label htmlFor="batimentos" className="font-semibold text-gray-700">
+              Como estão seus batimentos cardíacos?
+            </label>
+            <select
+              id="batimentos"
+              value={batimentos}
+              onChange={(e) => setBatimentos(e.target.value)}
+              className="p-3 border-2 border-gray-300 rounded-xl bg-gray-50 text-base focus:outline-none focus:border-purple-400 transition"
+            >
+              <option value="normal">Normal</option>
+              <option value="acelerado">Acelerado</option>
+              <option value="lento">Lento</option>
+            </select>
+          </div>
 
-          <button type="submit">Enviar monitoramento</button>
+          {/* Botão */}
+          <button
+            type="submit"
+            className="bg-purple-400 text-white py-3 text-lg font-bold rounded-xl hover:bg-purple-500 transition"
+          >
+            Enviar monitoramento
+          </button>
         </form>
       </main>
       <Footer />
