@@ -1,69 +1,135 @@
-# React + TypeScript + Vite
+Vitta Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Vitta Web é uma plataforma de saúde digital que facilita o acesso a consultas, triagens e monitoramento remoto. Foi construída com React + TailwindCSS, com foco em acessibilidade, usabilidade e uma interface limpa.
 
-Currently, two official plugins are available:
+🧪 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tela de agendamento de saúde digital com informações sobre como funciona, primeiro acesso e tutorial em PDF.
 
-## Expanding the ESLint configuration
+Página de FAQ com busca por palavra-chave.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Página de ajuda / suporte onde o usuário pode enviar feedback/imagens (print) do problema.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Monitoramento diário: pressão arterial, glicemia (se aplicável), respiração, batimentos.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Página de notificações com alertas de consulta.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Triagem “marcar no boneco” + triagem textual com perguntas.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Página de “Integrantes” mostrando quem fez o projeto (foto, RA, links de LinkedIn e GitHub).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+🎨 Tecnologias
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+React
+
+React Router (pra navegação entre páginas)
+
+TailwindCSS para estilização utilitária
+
+JavaScript / TypeScript (se você já estiver usando TS ou quiser)
+
+Estrutura de componentes (Navbar, Footer, etc)
+
+🚀 Como rodar o projeto localmente
+
+Tenha Node.js instalado.
+
+Clone este repositório.
+
+git clone <URL_DO_REPOSITORIO>
+cd nome-do-projeto
+
+
+Instale as dependências:
+
+npm install
+
+
+ou
+
+yarn
+
+
+Rode em modo de desenvolvimento:
+
+npm run dev
+
+
+ou
+
+yarn dev
+
+
+Abra o navegador em http://localhost:3000 (ou porta que o React informar).
+
+✅ Boas práticas implementadas
+
+Uso de formulários com validação básica: todos os campos obrigatórios devem ser preenchidos; se tiver diabetes, campo de glicemia aparece; mensagens de erro e sucesso.
+
+Feedback visual ao usuário (mensagem, aviso, redirecionamento).
+
+Layout responsivo: adaptação para telas menores.
+
+Uso de TailwindCSS para estilização utilitária — evitando CSS rígido e repetido.
+
+Componentes reutilizáveis (Navbar, Footer, Cards, etc).
+
+💡 Possíveis melhorias futuras
+
+Melhor validação nos campos numéricos (ex: limites válidos para pressão, glicemia, etc).
+
+Adicionar ícones ou animações mais suaves nos cards de integrantes.
+
+Melhorar experiência móvel: menu estilo “hamburger” para Navbar, otimizações de layout para celulares.
+
+Dark mode
+
+Internacionalização / múltiplos idiomas
+
+🗂 Estrutura de pastas sugerida
+/
+├── public/
+│   └── assets estáticos (imagens, pdfs, favicon, etc)
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   └── outros componentes pequenos (Card, Botão, etc)
+│   ├── pages/
+│   │   ├── AgendarTele.jsx
+│   │   ├── Monitoramento.jsx
+│   │   ├── Triagem.jsx
+│   │   ├── Triagemd.jsx
+│   │   └── outras páginas
+│   ├── routes/ ou App.jsx (configuração de rotas)
+│   ├── styles/ (Tailwind config, etc)
+│   └── utils/ (helpers, validações, etc)
+├── tailwind.config.js
+├── package.json
+└── README.md
+
+📋 Scripts úteis
+
+npm run dev — inicia servidor de desenvolvimento
+
+npm run build — cria versão de produção otimizada
+
+npm run preview — ver versão de produção localmente (se estiver configurado)
+
+⚙ Configurações do Tailwind específicas
+
+Cores personalizadas no tailwind.config.js (por exemplo: roxo do site, tons usados)
+
+Adicionar animações personalizadas, como fade, efeito pop de bolinha no triagem, etc.
+
+Responsividade com breakpoints Tailwind (sm, md, lg, xl)
+
+📌 Detalhes visuais / identidade
+
+Logotipo: images/vittahc (1).png
+
+Slogan usado: “Saúde que se conecta com você.”
+
+Cores principais: roxo, branco, tons neutros + gradientes nos elementos “hero”.
+
+Estilo de botões arredondados, sombras suaves, efeitos de hover/brilho.
