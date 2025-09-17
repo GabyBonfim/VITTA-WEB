@@ -1,18 +1,42 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
 export default function Monitoramento() {
+  const navigate = useNavigate();
+
   const [temDiabetes, setTemDiabetes] = useState("nao");
   const [pressao, setPressao] = useState("");
   const [glicemia, setGlicemia] = useState("");
   const [respiracao, setRespiracao] = useState("normal");
   const [batimentos, setBatimentos] = useState("normal");
+  const [erro, setErro] = useState("");
+  const [sucesso, setSucesso] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Validação
+    if (!pressao) {
+      setErro("Por favor, preencha sua pressão arterial.");
+      return;
+    }
+    if (temDiabetes === "sim" && !glicemia) {
+      setErro("Por favor, informe sua glicemia.");
+      return;
+    }
+
+    setErro(""); // limpa erro
+    setSucesso(true); // mostra mensagem de sucesso
+
+    // Aqui você poderia enviar para uma API ou Firebase
     console.log({ pressao, temDiabetes, glicemia, respiracao, batimentos });
-    alert("Monitoramento enviado com sucesso!");
+
+    // Redireciona depois de 2 segundos
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
   };
 
   return (
@@ -28,6 +52,20 @@ export default function Monitoramento() {
           onSubmit={handleSubmit}
           className="flex flex-col gap-6"
         >
+          {/* Mostra erro */}
+          {erro && (
+            <p className="text-red-600 bg-red-50 border border-red-200 p-3 rounded-xl text-sm">
+              {erro}
+            </p>
+          )}
+
+          {/* Mostra mensagem de sucesso */}
+          {sucesso && (
+            <p className="text-green-700 bg-green-50 border border-green-200 p-3 rounded-xl text-center font-semibold animate-pulse">
+              ✅ Monitoramento enviado com sucesso! Redirecionando...
+            </p>
+          )}
+
           {/* Pressão arterial */}
           <div className="flex flex-col">
             <label htmlFor="pressao" className="font-semibold text-gray-700">
@@ -38,7 +76,6 @@ export default function Monitoramento() {
               id="pressao"
               value={pressao}
               onChange={(e) => setPressao(e.target.value)}
-              required
               className="p-3 border-2 border-gray-300 rounded-xl bg-gray-50 text-base focus:outline-none focus:border-purple-400 transition"
             />
           </div>
@@ -112,9 +149,10 @@ export default function Monitoramento() {
           {/* Botão */}
           <button
             type="submit"
-            className="bg-purple-400 text-white py-3 text-lg font-bold rounded-xl hover:bg-purple-500 transition"
+            disabled={sucesso}
+            className="bg-purple-400 text-white py-3 text-lg font-bold rounded-xl hover:bg-purple-500 transition disabled:bg-gray-300 disabled:cursor-not-allowed"
           >
-            Enviar monitoramento
+            {sucesso ? "Enviando..." : "Enviar monitoramento"}
           </button>
         </form>
       </main>
