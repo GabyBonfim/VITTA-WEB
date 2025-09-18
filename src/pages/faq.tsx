@@ -1,7 +1,76 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
+type FaqCardProps = {
+  pergunta: string;
+  resposta: string;
+};
+
+
+function FaqCard({ pergunta, resposta }: FaqCardProps) {
+  return (
+    <div className="bg-[#f4f0e7] p-5 mb-5 rounded-2xl shadow-md text-left">
+      <p className="mb-2 text-base font-semibold">{pergunta}</p>
+      <p className="text-base">{resposta}</p>
+    </div>
+  );
+}
+
 export default function Faq() {
+
+  const faqs = [
+    {
+      pergunta: "1. É possível receber lembretes das minhas teleconsultas?",
+      resposta:
+        'Sim! Ao acessar a aba "notificações" na tela "Minha VITTA" você poderá ver se há teleconsultas agendadas, caso não, aparecerá a mensagem "não há teleconsultas marcadas".',
+    },
+    {
+      pergunta: "2. Como funciona a triagem online?",
+      resposta:
+        "Na triagem online, você responde algumas perguntas simples sobre seus sintomas. Com isso, ajudamos a direcionar você para o atendimento mais adequado.",
+    },
+    {
+      pergunta: "3. O site é acessível para pessoas com deficiência?",
+      resposta:
+        "Sim! Buscamos ao máximo tornar a saúde digital mais acessível, facilitando com textos, ícones, descrições e outros recursos para melhorar sua experiência como usuário.",
+    },
+    {
+      pergunta: "4. Esqueci minha senha. Como posso recuperá-la?",
+      resposta:
+        'Clique em "Esqueci minha senha" na tela de login e siga as instruções para redefini-la por e-mail ou SMS.',
+    },
+    {
+      pergunta: "5. Posso alterar meus dados pessoais no site?",
+      resposta:
+        "Sim! Basta acessar o menu 'Minha Conta', onde você poderá editar suas informações como nome, telefone, e-mail e endereço de forma segura.",
+    },
+    {
+      pergunta: "6. Como agendperguntasar uma nova consulta?",
+      resposta:
+        "Na aba 'Consultas', clique em 'Agendar Consulta', escolha a especialidade, data e horário disponíveis e confirme para finalizar o agendamento.",
+    },
+    {
+      pergunta: "7. Preciso pagar algo para usar a plataforma?",
+      resposta:
+        "O uso da plataforma é gratuito para pacientes cadastrados. Alguns serviços específicos podem exigir pagamento, mas você será informado antes de confirmar.",
+    },
+    {
+      pergunta: "8. Posso usar a plataforma no celular?",
+      resposta:
+        "Sim! Nosso site é responsivo e funciona bem em celulares e tablets. Além disso, estamos trabalhando em um aplicativo dedicado para facilitar ainda mais o acesso.",
+    },
+    {
+      pergunta: "9. Meus dados estão seguros?",
+      resposta:
+        "Sim. Utilizamos criptografia e seguimos as normas da LGPD (Lei Geral de Proteção de Dados) para garantir a segurança e privacidade das suas informações.",
+    },
+    {
+      pergunta: "10. Como entro em contato com o suporte?",
+      resposta:
+        "Você pode acessar o chat de suporte pelo rodapé do site ou enviar um e-mail para suporte@vitta.com. Nosso time atende de segunda a sexta, das 8h às 18h.",
+    },
+  ];
+
   return (
     <>
       <Navbar />
@@ -18,47 +87,18 @@ export default function Faq() {
             />
           </div>
 
-          <h2 className="text-purple-900 text-2xl mb-8">Perguntas Frequentes</h2>
+          <h2 className="text-purple-900 text-2xl mb-8">
+            Perguntas Frequentes
+          </h2>
 
-          {/* Cards de FAQ */}
-          <div className="bg-[#f4f0e7] p-5 mb-5 rounded-2xl shadow-md text-left">
-            <p className="mb-2 text-base font-semibold">
-              1. É possível receber lembretes das minhas teleconsultas?
-            </p>
-            <p className="text-base">
-              Sim! Ao acessar a aba "notificações" na tela "Minha VITTA" você poderá ver se há teleconsultas agendadas,
-              caso não, aparecerá a mensagem "não há teleconsultas marcadas".
-            </p>
-          </div>
-
-          <div className="bg-[#f4f0e7] p-5 mb-5 rounded-2xl shadow-md text-left">
-            <p className="mb-2 text-base font-semibold">
-              2. Como funciona a triagem online?
-            </p>
-            <p className="text-base">
-              Na triagem online, você responde algumas perguntas simples sobre seus sintomas. Com isso, ajudamos a
-              direcionar você para o atendimento mais adequado.
-            </p>
-          </div>
-
-          <div className="bg-[#f4f0e7] p-5 mb-5 rounded-2xl shadow-md text-left">
-            <p className="mb-2 text-base font-semibold">
-              3. O site é acessível para pessoas com deficiência?
-            </p>
-            <p className="text-base">
-              Sim! Buscamos ao máximo tornar a saúde digital mais acessível, facilitando com textos, ícones, descrições e
-              outros recursos para melhorar sua experiência como usuário.
-            </p>
-          </div>
-
-          <div className="bg-[#f4f0e7] p-5 mb-5 rounded-2xl shadow-md text-left">
-            <p className="mb-2 text-base font-semibold">
-              4. Esqueci minha senha. Como posso recuperá-la?
-            </p>
-            <p className="text-base">
-              Clique em "Esqueci minha senha" na tela de login e siga as instruções para redefini-la por e-mail ou SMS.
-            </p>
-          </div>
+          {/* Renderiza os cards dinamicamente */}
+          {faqs.map((faq, index) => (
+            <FaqCard
+              key={index}
+              pergunta={faq.pergunta}
+              resposta={faq.resposta}
+            />
+          ))}
         </div>
       </main>
 
