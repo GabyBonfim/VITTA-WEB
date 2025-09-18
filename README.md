@@ -90,5 +90,5 @@ Estilo de botões arredondados, sombras suaves, efeitos de hover/brilho.
 
 - Gabriely Bonfim, DESIGN & DEV FRONT-END | gabybonfim05@gmail.com
 - Mirelly Sousa, DESIGN & DEV FRONT-END | mirellysousa@gmail.com
-- Ruan Luca, DEV BACK-END | ruanluca@gmail.com
+- Ruan Luca, DEV BACK-END | ruanlfc@gmail.com
 
