@@ -8,7 +8,7 @@ export default function Navbar() {
     ["/", "Minha VITTA"],
     ["/faq", "Perguntas frequentes"],
     ["/ajuda", "Ajuda"],
-    ["/integrantes", "Sobre Nós"],l
+    ["/integrantes", "Sobre Nós"],
   ];
 
   return (
