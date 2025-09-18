@@ -91,12 +91,8 @@ export default function Faq() {
             Perguntas Frequentes
           </h2>
 
-          {/* Renderiza os cards dinamicamente */}
           {faqs.map((faq, index) => (
-            <FaqCard
-              key={index}
-              pergunta={faq.pergunta}
-              resposta={faq.resposta}
+            <FaqCard key={index} pergunta={faq.pergunta} resposta={faq.resposta}
             />
           ))}
         </div>
