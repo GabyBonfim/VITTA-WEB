@@ -28,13 +28,15 @@ Vitta Web é uma plataforma de saúde digital que facilita o acesso a consultas,
 
 ## Como rodar o projeto localmente:
 
-Tenha Node.js instalado.
+- Tenha Node.js instalado;
+- Ter o VITE, REACT-ROUTER-DOM e TAILWIND pode ser necessário para rodar o projeto.
+- Clone este repositório;
 
-Clone este repositório.
+### Para rodar via terminal:
+- git clone <https://github.com/GabyBonfim/VITTA-WEB.git>
+- cd VITTA-WEB
 
-git clone <https://github.com/GabyBonfim/VITTA-WEB.git>
-cd VITTA-WEB
-
+OBS: Utilizar o GITHUB Desktop é uma ótima opção!
 
 ## Instale as dependências:
 
@@ -91,4 +93,8 @@ Estilo de botões arredondados, sombras suaves, efeitos de hover/brilho.
 - Gabriely Bonfim, DESIGN & DEV FRONT-END | gabybonfim05@gmail.com
 - Mirelly Sousa, DESIGN & DEV FRONT-END | mirellysousa@gmail.com
 - Ruan Luca, DEV BACK-END | ruanlfc@gmail.com
+
+## LINKS para fins facultativos:
+- LINK DO REPOSITÓRIO: <https://github.com/GabyBonfim/VITTA-WEB.git>
+- LINK DO VÍDEO DA APRESENTAÇÃO DA SOLUÇÃO: 
 
