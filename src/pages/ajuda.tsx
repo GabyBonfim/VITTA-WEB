@@ -7,7 +7,7 @@ export default function Ajuda() {
       <Navbar />
       <main>
         <div className="max-w-[700px] w-[90%] mx-auto text-center">
-          <h2 className="text-purple-900 text-xl mb-8">Suporte a você</h2>
+          <h2 className="text-purple-900 text-xl mb-8 mt-10">Suporte a você</h2>
 
           {/* Card de e-mail */}
           <div className="bg-[#f4f0e7] p-5 rounded-2xl shadow-md mb-8">

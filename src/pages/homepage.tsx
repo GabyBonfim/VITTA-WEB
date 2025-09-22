@@ -1,67 +1,123 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-{/*import "../assets/css/homepage.css";*/}
+
 
 export default function Homepage() {
+
+    const noticias = [
+    {
+      img: "/images/moco.png",
+      titulo: "Busca por atendimentos em saúde mental cresce após a pandemia",
+      texto:
+        "Em Ribeirão Preto, número de atendimentos em saúde mental já passa de 200 mil por ano",
+      link: "https://jornal.usp.br/campus-ribeirao-preto/busca-por-atendimentos-em-saude-mental-cresce-apos-a-pandemia/",
+    },
+    {
+      img: "/images/hc.png",
+      titulo: "Hospital das Clínicas da USP se torna centro de referência internacional no combate ao câncer",
+      texto:
+        "Acordo oficial foi realizado nesta terça-feira (16) na sede da agência, em Viena, Áustria. Instituição vai atuar como polo regional de conhecimento especializado e treinamento.",
+      link: "https://g1.globo.com/sp/sao-paulo/noticia/2025/09/16/hospital-das-clinicas-da-usp-se-torna-centro-de-referencia-internacional-no-combate-ao-cancer.ghtml",
+    },
+    {
+      img: "/images/exposicao.png",
+      titulo: "Exposição mostra mobilização do Hospital das Clínicas de SP no combate à pandemia da Covid-19",
+      texto:
+        "Exposição em cartaz no mês de junho mostra o percurso da doença desde os primeiros casos registrados até o início da vacinação no país",
+      link: "https://www.saude.sp.gov.br/coordenadoria-de-controle-de-doencas/noticias/24062025-exposicao-mostra-mobilizacao-do-hospital-das-clinicas-de-sp-no-combate-a-pandemia-da-covid-19",
+    },
+  ];
+
+  const [indexAtual, setIndexAtual] = useState(0);
+
+  // Funções para avançar e voltar
+  const proximaNoticia = () => {
+    setIndexAtual((prev) => (prev + 1) % noticias.length);
+  };
+
+  const noticiaAnterior = () => {
+    setIndexAtual((prev) => (prev - 1 + noticias.length) % noticias.length);
+  };
+
   return (
     <>
       <Navbar />
 
-      <main className="w-[90%] mx-auto my-12 px-5">
-        {/* Notícia */}
-        <section className="bg-white flex items-center gap-5 rounded-xl p-5 shadow-md mb-10 max-w-full">
-          <img src="/images/noticia.png" alt="Notícia" className="w-[250px] rounded-lg"/>
-          <div>
-            <h3 className="text-lg font-semibold mb-2">
-              Busca por atendimentos em saúde mental cresce após a pandemia
-            </h3>
-            <p className="text-gray-700 mb-3">
-              Em Ribeirão Preto, número de atendimentos em saúde mental já passa
-              de 200 mil por ano
-            </p>
-            <a href="#"
-              className="inline-block bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-800 transition"
-            >
-              Ver matéria
-            </a>
-          </div>
-        </section>
+<main className="w-full px-5">
 
-        {/* Conteúdo - Usuário + Saúde */}
-        <div className="flex flex-wrap gap-8 mb-10 justify-center">
-          {/* Card Usuário */}
-          <div className="bg-purple-200 p-5 rounded-2xl flex items-center gap-4 shadow-md flex-1 min-w-[280px]">
-            <img src="/images/user-icon.png" alt="Mascote" className="w-[100px]" />
-            
-            <div>
-              <h3 className="font-bold mb-1">Mirelly Sousa</h3>
-              <p>Nascido(a) em: 16/05/2006</p>
-              <p>CPF: 352.789.356-03</p>
-              <p>Sexo: Feminino</p>
-            </div>
-          </div>
-
-          {/* Card Saúde */}
-          <div className="bg-orange-50 p-5 rounded-2xl shadow-md flex-1 min-w-[280px]">
-            <h4 className="font-semibold text-lg mb-3">Minha saúde hoje</h4>
-            <ul className="space-y-2">
-              <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
-                Pressão -
-              </li>
-              <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
-                Glicemia -
-              </li>
-              <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
-                Respiração -
-              </li>
-              <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
-                Coração -
-              </li>
-            </ul>
-          </div>
+  <div className="max-w-[1100px] mx-auto">
+    {/* Carrossel de Notícias */}
+    <section className="bg-white rounded-xl p-5 shadow-md mb-10 mt-10 relative">
+      <div className="flex items-center gap-5">
+        <img
+          src={noticias[indexAtual].img}
+          alt="Notícia"
+          className="w-[250px] rounded-lg"
+        />
+        <div>
+          <h3 className="text-lg font-semibold mb-2">
+            {noticias[indexAtual].titulo}
+          </h3>
+          <p className="text-gray-700 mb-3">{noticias[indexAtual].texto}</p>
+          <a
+            href={noticias[indexAtual].link}
+            className="inline-block bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-800 transition"
+          >
+            Ver matéria
+          </a>
         </div>
+      </div>
+
+      {/* Botões do Carrossel */}
+      <button
+        onClick={noticiaAnterior}
+        className="absolute left-3 top-1/2 -translate-y-1/2 bg-purple-600 text-white rounded-full p-2 hover:bg-purple-800 transition"
+      >
+        ◀
+      </button>
+      <button
+        onClick={proximaNoticia}
+        className="absolute right-3 top-1/2 -translate-y-1/2 bg-purple-600 text-white rounded-full p-2 hover:bg-purple-800 transition"
+      >
+        ▶
+      </button>
+    </section>
+
+    {/* Conteúdo - Usuário + Saúde */}
+    <div className="flex flex-wrap gap-8 mb-10 justify-center">
+      {/* Card Usuário */}
+      <div className="bg-purple-200 p-5 rounded-2xl flex items-center gap-4 shadow-md flex-1 min-w-[280px]">
+        <img src="/images/user-icon.png" alt="Mascote" className="w-[100px]" />
+        <div>
+          <h3 className="font-bold mb-1">Mirelly Sousa</h3>
+          <p>Nascido(a) em: 16/05/2006</p>
+          <p>CPF: 352.789.356-03</p>
+          <p>Sexo: Feminino</p>
+        </div>
+      </div>
+
+      {/* Card Saúde */}
+      <div className="bg-orange-50 p-5 rounded-2xl shadow-md flex-1 min-w-[280px]">
+        <h4 className="font-semibold text-lg mb-3">Minha saúde hoje</h4>
+        <ul className="space-y-2">
+          <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
+            Pressão -
+          </li>
+          <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
+            Glicemia -
+          </li>
+          <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
+            Respiração -
+          </li>
+          <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
+            Coração -
+          </li>
+        </ul>
+      </div>
+    </div>
 
         {/* Cards de Acesso Rápido */}
         <div className="flex flex-wrap justify-center gap-6">
@@ -180,7 +236,8 @@ export default function Homepage() {
             </Link>
           </div>
         </div>
-      </main>
+      </div>
+    </main>
 
       <Footer />
     </>
