@@ -46,7 +46,6 @@ ou
 
 yarn
 
-
 ## Rode em modo de desenvolvimento:
 
 npm run dev
