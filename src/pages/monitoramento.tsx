@@ -27,13 +27,20 @@ export default function Monitoramento() {
       return;
     }
 
-    setErro(""); // limpa erro
-    setSucesso(true); // mostra mensagem de sucesso
+    setErro("");
+    setSucesso(true); 
 
-    // Aqui você poderia enviar para uma API ou Firebase
     console.log({ pressao, temDiabetes, glicemia, respiracao, batimentos });
 
-    // Redireciona depois de 2 segundos
+      const dadosMonitoramento = {
+      pressao,
+      glicemia,
+      batimentos,
+      respiracao,
+      data: new Date().toLocaleDateString("pt-BR"),
+    };
+    localStorage.setItem("monitoramento", JSON.stringify(dadosMonitoramento));
+    
     setTimeout(() => {
       navigate("/");
     }, 2000);
@@ -52,21 +59,19 @@ export default function Monitoramento() {
           onSubmit={handleSubmit}
           className="flex flex-col gap-6"
         >
-          {/* Mostra erro */}
+    
           {erro && (
             <p className="text-red-600 bg-red-50 border border-red-200 p-3 rounded-xl text-sm">
               {erro}
             </p>
           )}
 
-          {/* Mostra mensagem de sucesso */}
           {sucesso && (
             <p className="text-green-700 bg-green-50 border border-green-200 p-3 rounded-xl text-center font-semibold animate-pulse">
               ✅ Monitoramento enviado com sucesso! Redirecionando...
             </p>
           )}
 
-          {/* Pressão arterial */}
           <div className="flex flex-col">
             <label htmlFor="pressao" className="font-semibold text-gray-700">
               Pressão arterial (mmHg):
@@ -80,7 +85,6 @@ export default function Monitoramento() {
             />
           </div>
 
-          {/* Tem diabetes */}
           <div className="flex flex-col">
             <label htmlFor="temDiabetes" className="font-semibold text-gray-700">
               Você tem diabetes?
@@ -96,7 +100,6 @@ export default function Monitoramento() {
             </select>
           </div>
 
-          {/* Campo glicemia - aparece só se "sim" */}
           {temDiabetes === "sim" && (
             <div className="flex flex-col animate-fadeIn">
               <label htmlFor="glicemia" className="font-semibold text-gray-700">
@@ -112,7 +115,6 @@ export default function Monitoramento() {
             </div>
           )}
 
-          {/* Respiração */}
           <div className="flex flex-col">
             <label htmlFor="respiracao" className="font-semibold text-gray-700">
               Como está sua respiração?
@@ -129,7 +131,6 @@ export default function Monitoramento() {
             </select>
           </div>
 
-          {/* Batimentos */}
           <div className="flex flex-col">
             <label htmlFor="batimentos" className="font-semibold text-gray-700">
               Como estão seus batimentos cardíacos?
@@ -146,7 +147,6 @@ export default function Monitoramento() {
             </select>
           </div>
 
-          {/* Botão */}
           <button
             type="submit"
             disabled={sucesso}
