@@ -1,20 +1,12 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 
 export default function Homepage() {
 
-    const [dadosMonitoramento, setDadosMonitoramento] = useState(null);
-
-  useEffect(() => {
-    const dados = localStorage.getItem("monitoramento");
-    if (dados) {
-      setDadosMonitoramento(JSON.parse(dados));
-    }
-  }, []);
 
     const noticias = [
     {
