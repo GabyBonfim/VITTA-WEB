@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
@@ -5,7 +6,6 @@ type FaqCardProps = {
   pergunta: string;
   resposta: string;
 };
-
 
 function FaqCard({ pergunta, resposta }: FaqCardProps) {
   return (
@@ -17,6 +17,7 @@ function FaqCard({ pergunta, resposta }: FaqCardProps) {
 }
 
 export default function Faq() {
+  const [searchTerm, setSearchTerm] = useState(""); // estado para o input
 
   const faqs = [
     {
@@ -45,7 +46,7 @@ export default function Faq() {
         "Sim! Basta acessar o menu 'Minha Conta', onde você poderá editar suas informações como nome, telefone, e-mail e endereço de forma segura.",
     },
     {
-      pergunta: "6. Como agendperguntasar uma nova consulta?",
+      pergunta: "6. Como agendar uma nova consulta?",
       resposta:
         "Na aba 'Consultas', clique em 'Agendar Consulta', escolha a especialidade, data e horário disponíveis e confirme para finalizar o agendamento.",
     },
@@ -71,6 +72,13 @@ export default function Faq() {
     },
   ];
 
+  // Filtra FAQs com base no termo de pesquisa
+  const filteredFaqs = faqs.filter(
+    (faq) =>
+      faq.pergunta.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      faq.resposta.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <>
       <Navbar />
@@ -81,8 +89,9 @@ export default function Faq() {
           <div className="mb-6">
             <input
               type="text"
-              id="pesquisa"
               placeholder="Digite aqui uma palavra chave, exemplo: 'triagem'"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="w-4/5 max-w-[400px] p-3 text-base border-2 border-[#9583B6] rounded-xl outline-none focus:ring-2 focus:ring-purple-700"
             />
           </div>
@@ -91,10 +100,13 @@ export default function Faq() {
             Perguntas Frequentes
           </h2>
 
-          {faqs.map((faq, index) => (
-            <FaqCard key={index} pergunta={faq.pergunta} resposta={faq.resposta}
-            />
-          ))}
+          {filteredFaqs.length > 0 ? (
+            filteredFaqs.map((faq, index) => (
+              <FaqCard key={index} pergunta={faq.pergunta} resposta={faq.resposta} />
+            ))
+          ) : (
+            <p className="text-gray-500">Nenhuma pergunta encontrada.</p>
+          )}
         </div>
       </main>
 
