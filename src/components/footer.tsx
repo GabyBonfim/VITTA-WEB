@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#7b4ce0] text-white mt-16 rounded-t-2xl text-center px-5 py-10">
+    <footer className="bg-[#7b4ce0] text-white mt-60 rounded-t-2xl text-center px-5 py-10 ">
       <div className="flex flex-wrap justify-between items-center max-w-5xl mx-auto mb-5">
         {/* Logo */}
         <div className="flex items-center gap-3 font-bold text-lg">

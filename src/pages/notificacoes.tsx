@@ -27,8 +27,6 @@ export default function Notificacoes() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }
