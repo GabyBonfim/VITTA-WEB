@@ -3,8 +3,6 @@ import Footer from "../components/footer";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-
-
 export default function Homepage() {
 
 
