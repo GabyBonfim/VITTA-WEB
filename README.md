@@ -8,7 +8,7 @@
 
   ---
   
-  <img src="images/vittahc (1).png" alt="Logotipo Vitta HC" width="150" />
+  <img src="images/logotipo-vitta.png" alt="Logotipo Vitta HC" width="150" />
   
   [![Tecnologia](https://img.shields.io/badge/Tecnologia-React%20%7C%20TailwindCSS-blueviolet?style=for-the-badge&logo=react&logoColor=cyan)](https://pt-br.reactjs.org/)
   [![Navegação](https://img.shields.io/badge/Roteamento-React%20Router%20DOM-orange?style=for-the-badge&logo=reactrouter&logoColor=white)](https://reactrouter.com/en/main)
