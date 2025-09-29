@@ -95,5 +95,5 @@ Estilo de botões arredondados, sombras suaves, efeitos de hover/brilho.
 
 ## LINKS para fins facultativos:
 - LINK DO REPOSITÓRIO: <https://github.com/GabyBonfim/VITTA-WEB.git>
-- LINK DO VÍDEO DA APRESENTAÇÃO DA SOLUÇÃO: 
+- LINK DO VÍDEO DA APRESENTAÇÃO DA SOLUÇÃO: <https://youtu.be/dGqbTyqBrpE?si=0hnUSR4Ra9QSCQMP>
 
