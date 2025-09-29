@@ -1,7 +1,15 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+interface DadosMonitoramento {
+  pressao: string;
+  glicemia: string;
+  batimentos: string;
+  respiracao: string;
+  data: string;
+}
 
 export default function Homepage() {
 
@@ -41,6 +49,33 @@ export default function Homepage() {
     setIndexAtual((prev) => (prev - 1 + noticias.length) % noticias.length);
   };
 
+
+    const [dadosMonitoramento, setDadosMonitoramento] = useState<
+      DadosMonitoramento | undefined
+    >(undefined); 
+
+  useEffect(() => {
+    const dadosSalvos = localStorage.getItem("monitoramento");
+    if (dadosSalvos) {
+      try {
+        const dados = JSON.parse(dadosSalvos) as DadosMonitoramento;
+        setDadosMonitoramento(dados);
+      } catch (e) {
+        console.error("Erro ao fazer o parse dos dados de monitoramento:", e);
+      }
+    }
+  }, []); 
+
+
+  const formatarValor = (valor: string | undefined, unidade: string) => {
+    return valor ? `${valor} ${unidade}` : "Não informado";
+  };
+  
+  const textoDefault = "Aguardando monitoramento";
+
+  const dataFormatada = dadosMonitoramento?.data 
+    ? `Monitoramento de ${dadosMonitoramento.data}` 
+    : textoDefault;
   return (
     <>
       <Navbar />
@@ -98,25 +133,31 @@ export default function Homepage() {
         </div>
       </div>
 
-      {/* Card Saúde */}
-      <div className="bg-orange-50 p-5 rounded-2xl shadow-md flex-1 min-w-[280px]">
-        <h4 className="font-semibold text-lg mb-3">Minha saúde hoje</h4>
-        <ul className="space-y-2">
-          <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
-            Pressão -
-          </li>
-          <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
-            Glicemia -
-          </li>
-          <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
-            Respiração -
-          </li>
-          <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
-            Coração -
-          </li>
-        </ul>
-      </div>
-    </div>
+   {/* Card Saúde - ATUALIZADO */}
+            <div className="bg-orange-50 p-5 rounded-2xl shadow-md flex-1 min-w-[280px]">
+              <h4 className="font-semibold text-lg mb-3">
+                {dataFormatada}
+              </h4>
+              <ul className="space-y-2">
+                <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
+                  Pressão -{" "}
+                  {formatarValor(dadosMonitoramento?.pressao, "mmHg")}
+                </li>
+                <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
+                  Glicemia -{" "}
+                  {formatarValor(dadosMonitoramento?.glicemia, "mg/dL")}
+                </li>
+                <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
+                  Respiração -{" "}
+                  {dadosMonitoramento?.respiracao || "Não informado"}
+                </li>
+                <li className="bg-amber-200 font-bold px-3 py-2 rounded-md">
+                  Coração -{" "}
+                  {dadosMonitoramento?.batimentos || "Não informado"}
+                </li>
+              </ul>
+            </div>
+          </div>
 
         {/* Cards de Acesso Rápido */}
         <div className="flex flex-wrap justify-center gap-6">
