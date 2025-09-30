@@ -8,7 +8,7 @@
 
   ---
   
-  <img src="images/logotipo-vitta.png" alt="Logotipo Vitta HC" width="150" />
+  <img src="images/vittahc (1).png" alt="Logotipo Vitta HC" width="150" />
   
   [![Tecnologia](https://img.shields.io/badge/Tecnologia-React%20%7C%20TailwindCSS-blueviolet?style=for-the-badge&logo=react&logoColor=cyan)](https://pt-br.reactjs.org/)
   [![Navegação](https://img.shields.io/badge/Roteamento-React%20Router%20DOM-orange?style=for-the-badge&logo=reactrouter&logoColor=white)](https://reactrouter.com/en/main)
@@ -40,6 +40,41 @@ O projeto foi construído utilizando as seguintes tecnologias de desenvolvimento
 | **Tailwind CSS** | Framework CSS utilitário focado em agilizar e padronizar a estilização. |
 | **JavaScript / TypeScript** | Linguagens de programação base para a lógica da aplicação. |
 | **Estrutura Modular** | Organização do código em componentes reutilizáveis (`Navbar`, `Footer`, `Cards`). |
+
+---
+
+## 📂 Estrutura do Projeto
+
+A organização do código segue a estrutura padrão de projetos React/Vite com a divisão clara entre componentes reutilizáveis e páginas específicas:
+
+VITTA-WEB/
+├── node_modules/         # Dependências do projeto
+├── public/               # Assets estáticos (imagens, etc.)
+└── src/
+├── assets/
+│   └── css/
+│       └── triagem.css
+├── components/
+│   ├── footer.tsx    # Componente de rodapé reutilizável
+│   └── navbar.tsx    # Componente de navegação reutilizável
+└── pages/            # Componentes de página (rotas da aplicação)
+├── agendartele.tsx
+├── ajuda.tsx
+├── faq.tsx
+├── homepage.tsx
+├── integrantes.tsx
+├── monitoramento.tsx
+├── notificacoes.tsx
+├── triagem.tsx
+└── triagemd.tsx
+├── App.css
+├── App.tsx           # Componente principal / Roteamento
+├── main.tsx          # Ponto de entrada (renderiza App)
+└── vite-env.d.ts
+├── index.html            # Arquivo HTML principal
+├── package.json          # Metadados e lista de dependências
+└── README.md
+
 
 ---
 
