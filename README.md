@@ -49,6 +49,7 @@ A organização do código segue a estrutura padrão de projetos React/Vite com 
 
 VITTA-WEB/
 ├── node_modules/         # Dependências do projeto
+
 ├── public/               # Assets estáticos (imagens, etc.)
 
 └── src/
