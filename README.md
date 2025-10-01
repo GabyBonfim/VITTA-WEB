@@ -8,7 +8,7 @@
 
   ---
   
-  <img src="images/vittahc (1).png" alt="Logotipo Vitta HC" width="150" />
+  <img src="images/logotipo-vitta.png" alt="Logotipo Vitta HC" width="150" />
   
   [![Tecnologia](https://img.shields.io/badge/Tecnologia-React%20%7C%20TailwindCSS-blueviolet?style=for-the-badge&logo=react&logoColor=cyan)](https://pt-br.reactjs.org/)
   [![Navegação](https://img.shields.io/badge/Roteamento-React%20Router%20DOM-orange?style=for-the-badge&logo=reactrouter&logoColor=white)](https://reactrouter.com/en/main)
@@ -49,7 +49,6 @@ A organização do código segue a estrutura padrão de projetos React/Vite com 
 
 VITTA-WEB/
 ├── node_modules/         # Dependências do projeto
-
 ├── public/               # Assets estáticos (imagens, etc.)
 
 └── src/
@@ -157,7 +156,7 @@ Abra seu navegador e acesse a URL que o terminal informar, geralmente: `http://l
 
 ## 🎨 Detalhes Visuais & Identidade
 
-* **Logotipo:** `images/vittahc (1).png`
+* **Logotipo:** `images/logotipo-vitta.png`
 * **Slogan:** “Saúde que se conecta com você.”
 * **Cores Principais:** Roxo, branco, tons neutros, com destaque para gradientes nos elementos de destaque ("hero").
 * **Estilo:** Botões arredondados, sombras suaves e efeitos de *hover* para feedback interativo.
