@@ -126,10 +126,10 @@ export default function Homepage() {
       <div className="bg-purple-200 p-5 rounded-2xl flex items-center gap-4 shadow-md flex-1 min-w-[280px]">
         <img src="/images/user-icon.png" alt="Mascote" className="w-[100px]" />
         <div>
-          <h3 className="font-bold mb-1">Mirelly Sousa</h3>
+          <h3 className="font-bold mb-1">Adriano Milanez</h3>
           <p>Nascido(a) em: 16/05/2006</p>
           <p>CPF: 352.789.356-03</p>
-          <p>Sexo: Feminino</p>
+          <p>Sexo: Masculino</p>
         </div>
       </div>
 

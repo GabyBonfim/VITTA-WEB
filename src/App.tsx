@@ -9,6 +9,8 @@ import Notificacoes from "./pages/notificacoes";
 import Triagem from "./pages/triagem";
 import Triagemd from "./pages/triagemd";
 import './App.css'
+import Login from "./pages/login";
+import Cadastro from "./pages/cadastro";
 
 
 export default function App() {
@@ -16,7 +18,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
 
-        <Route path="/" element={<Homepage />} />
+        <Route path="/homepage" element={<Homepage />} />
         <Route path="/agendartele" element={<AgendarTele />} />
         <Route path="/ajuda" element={<Ajuda />} />
         <Route path="/faq" element={<Faq />} />
@@ -25,6 +27,8 @@ export default function App() {
         <Route path="/notificacoes" element={<Notificacoes />} />
         <Route path="/triagem" element={<Triagem />} />
         <Route path="/triagemd" element={<Triagemd />} />
+        <Route path="/" element={<Login/>} />
+        <Route path="/cadastro" element={<Cadastro/>} />
 
       </Routes>
     </BrowserRouter>

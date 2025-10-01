@@ -13,8 +13,8 @@ export default function Footer() {
         {/* Menu */}
         <ul className="flex list-none gap-6 mt-5 sm:mt-0">
           {[
-            ["/politica", "Política de Privacidade"],
-            ["/termos", "Termos de Uso"],
+            ["/faq", "Política de Privacidade"],
+            ["/sobre", "Termos de Uso"],
             ["/ajuda", "Contato"],
           ].map(([to, label]) => (
             <li key={to}>
