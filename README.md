@@ -49,30 +49,55 @@ A organização do código segue a estrutura padrão de projetos React/Vite com 
 
 VITTA-WEB/
 ├── node_modules/         # Dependências do projeto
+
 ├── public/               # Assets estáticos (imagens, etc.)
+
 └── src/
+
 ├── assets/
+
 │   └── css/
+
 │       └── triagem.css
+
 ├── components/
+
 │   ├── footer.tsx    # Componente de rodapé reutilizável
+
 │   └── navbar.tsx    # Componente de navegação reutilizável
+
 └── pages/            # Componentes de página (rotas da aplicação)
+
 ├── agendartele.tsx
+
 ├── ajuda.tsx
+
 ├── faq.tsx
+
 ├── homepage.tsx
+
 ├── integrantes.tsx
+
 ├── monitoramento.tsx
+
 ├── notificacoes.tsx
+
 ├── triagem.tsx
+
 └── triagemd.tsx
+
 ├── App.css
+
 ├── App.tsx           # Componente principal / Roteamento
+
 ├── main.tsx          # Ponto de entrada (renderiza App)
+
 └── vite-env.d.ts
+
 ├── index.html            # Arquivo HTML principal
+
 ├── package.json          # Metadados e lista de dependências
+
 └── README.md
 
 
