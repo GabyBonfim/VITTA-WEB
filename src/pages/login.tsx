@@ -11,8 +11,8 @@ export default function Login() {
   const handleLogin = () => {
     // Usuário e senha "fixos" para teste
     if (cpf === "11122233355" && senha === "teste") {
-      localStorage.setItem("logado", "true"); // marca como logado
-      navigate("/homepage"); // redireciona para a homepage
+      localStorage.setItem("logado", "true"); 
+      navigate("/homepage"); 
     } else {
       alert("Email ou senha incorretos!");
     }
