@@ -30,34 +30,34 @@ export default function DetalhesPaciente() {
     <>
       <Navbar />
 
-      <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white py-12 px-6 flex justify-center">
-        <div className="bg-white w-full max-w-2xl shadow-xl rounded-2xl p-8 border border-gray-200">
-          <h1 className="text-3xl font-bold text-blue-700 text-center mb-8">
+      <div className="min-h-screen bg-gradient-to-b to-white py-12 px-6 flex justify-center">
+        <div className="bg-[#f4f0e7] w-full max-w-2xl shadow-xl rounded-2xl p-8 border border-gray-200">
+          <h1 className="text-3xl font-bold text-[#7b4ce0] text-center mb-8">
             Detalhes do Paciente
           </h1>
 
           <div className="space-y-4 text-gray-800">
-            <p><span className="font-semibold text-blue-700">ID:</span> {paciente.id}</p>
-            <p><span className="font-semibold text-blue-700">Nome:</span> {paciente.nome}</p>
-            <p><span className="font-semibold text-blue-700">Data de Nascimento:</span> {paciente.dataNasc}</p>
-            <p><span className="font-semibold text-blue-700">CPF:</span> {paciente.cpf}</p>
-            <p><span className="font-semibold text-blue-700">Endereço:</span> {paciente.endereco}</p>
-            <p><span className="font-semibold text-blue-700">Telefone:</span> {paciente.telefone}</p>
+            <p><span className="font-semibold text-[#7b4ce0]">ID:</span> {paciente.id}</p>
+            <p><span className="font-semibold text-[#7b4ce0]">Nome:</span> {paciente.nome}</p>
+            <p><span className="font-semibold text-[#7b4ce0] ">Data de Nascimento:</span> {paciente.dataNasc}</p>
+            <p><span className="font-semibold text-[#7b4ce0] ">CPF:</span> {paciente.cpf}</p>
+            <p><span className="font-semibold text-[#7b4ce0] ">Endereço:</span> {paciente.endereco}</p>
+            <p><span className="font-semibold text-[#7b4ce0] ">Telefone:</span> {paciente.telefone}</p>
           </div>
 
-          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-4 shadow-sm">
-            <h2 className="text-lg font-semibold text-blue-700 mb-2">
+          <div className="mt-8 bg-[#7b4ce0] border border-blue-200 rounded-xl p-4 shadow-sm">
+            <h2 className="text-lg font-semibold text-white mb-2">
               Últimos insights de saúde:
             </h2>
-            <p className="text-gray-700 italic">{paciente.insights}</p>
+            <p className="text-white italic">{paciente.insights}</p>
           </div>
 
           <div className="mt-10 text-center">
             <Link
               to="/pacientes"
-              className="inline-block bg-blue-600 text-white px-6 py-2 rounded-xl shadow-md hover:bg-blue-700 transition-all"
+              className="inline-block bg-[#7b4ce0] text-white px-6 py-2 rounded-xl shadow-md transition-all"
             >
-              ⬅ Voltar à lista
+              Voltar à lista
             </Link>
           </div>
         </div>

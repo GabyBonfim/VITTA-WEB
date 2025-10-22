@@ -32,7 +32,7 @@ export default function App() {
         <Route path="/" element={<Login/>} />
         <Route path="/cadastro" element={<Cadastro />} />
          <Route path="/pacientes" element={<Pacientes />} />
-          <Route path="/DetalhesPaciente" element={<DetalhesPaciente />} />
+          <Route path="/detalhespaciente/:id" element={<DetalhesPaciente />} />
 
       </Routes>
     </BrowserRouter>
