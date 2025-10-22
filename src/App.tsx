@@ -11,6 +11,8 @@ import Triagemd from "./pages/triagemd";
 import './App.css'
 import Login from "./pages/login";
 import Cadastro from "./pages/cadastro";
+import Pacientes from "./pages/Pacientes";
+import DetalhesPaciente from "./pages/DetalhesPaciente";
 
 
 export default function App() {
@@ -28,7 +30,9 @@ export default function App() {
         <Route path="/triagem" element={<Triagem />} />
         <Route path="/triagemd" element={<Triagemd />} />
         <Route path="/" element={<Login/>} />
-        <Route path="/cadastro" element={<Cadastro/>} />
+        <Route path="/cadastro" element={<Cadastro />} />
+         <Route path="/pacientes" element={<Pacientes />} />
+          <Route path="/DetalhesPaciente" element={<DetalhesPaciente />} />
 
       </Routes>
     </BrowserRouter>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#7b4ce0] text-white mt-60 rounded-t-2xl text-center px-5 py-10 ">
+    <footer className="bg-[#7b4ce0] min-w-full text-white rounded-t-2xl text-center px-5 py-10 mt-40">
       <div className="flex flex-wrap justify-between items-center max-w-5xl mx-auto mb-5">
         {/* Logo */}
         <div className="flex items-center gap-3 font-bold text-lg">
@@ -14,7 +14,7 @@ export default function Footer() {
         <ul className="flex list-none gap-6 mt-5 sm:mt-0">
           {[
             ["/faq", "Política de Privacidade"],
-            ["/sobre", "Termos de Uso"],
+            ["/integrantes", "Termos de Uso"],
             ["/ajuda", "Contato"],
           ].map(([to, label]) => (
             <li key={to}>
@@ -28,8 +28,6 @@ export default function Footer() {
           ))}
         </ul>
       </div>
-
-      {/* Direitos reservados */}
       <p className="text-sm mt-3">
         © 2025 Vitta Web - Todos os direitos reservados.
       </p>
