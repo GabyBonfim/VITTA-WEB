@@ -17,7 +17,7 @@ interface Paciente {
   nome: string;
   cpf: string;
   dataNascimento: string;
-  telefone: string;
+  numero: number;
   feedback: string;
   endereco: Endereco;
 }
@@ -126,22 +126,28 @@ export default function Pacientes() {
   };
 
   // Enviar dados ao backend
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const url = editando
-      ? `http://localhost:8080/paciente/${pacienteAtual.id}`
-      : "http://localhost:8080/paciente";
-    const metodo = editando ? "PUT" : "POST";
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    await fetch(url, {
-      method: metodo,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(pacienteAtual),
-    });
+  const pacienteParaEnviar = {
+    ...pacienteAtual,
 
-    fecharModal();
-    window.location.reload();
   };
+
+  const url = editando
+    ? `http://localhost:8080/paciente/${pacienteAtual.id}`
+    : "http://localhost:8080/paciente";
+  const metodo = editando ? "PUT" : "POST";
+
+  await fetch(url, {
+    method: metodo,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(pacienteParaEnviar),
+  });
+
+  fecharModal();
+  window.location.reload();
+};
 
   const excluirPaciente = async (id: number) => {
     if (confirm("Deseja realmente excluir este paciente?")) {
@@ -149,6 +155,7 @@ export default function Pacientes() {
       setPacientes((prev) => prev.filter((p) => p.id !== id));
     }
   };
+
 
   return (
     <>
@@ -226,7 +233,7 @@ export default function Pacientes() {
                   required
                 />
                 <input
-                  type="date"
+                  type="text"
                   name="dataNascimento"
                   value={pacienteAtual.dataNascimento || ""}
                   onChange={handleChange}
@@ -236,10 +243,10 @@ export default function Pacientes() {
                 />
                 <input
                   type="text"
-                  name="telefone"
-                  value={pacienteAtual.telefone || ""}
+                  name="numero"
+                  value={pacienteAtual.numero || ""}
                   onChange={handleChange}
-                  placeholder="Telefone"
+                  placeholder="numero"
                   className="border p-2 rounded"
                 />
                 <input
