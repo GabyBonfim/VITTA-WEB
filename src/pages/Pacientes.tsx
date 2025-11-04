@@ -86,9 +86,17 @@ export default function Pacientes() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    if ([
-      "cep", "logradouro", "complemento", "bairro", "localidade", "estado", "regiao"
-    ].includes(name)) {
+    if (
+      [
+        "cep",
+        "logradouro",
+        "complemento",
+        "bairro",
+        "localidade",
+        "estado",
+        "regiao",
+      ].includes(name)
+    ) {
       setPacienteAtual((prev) => ({
         ...prev,
         endereco: { ...prev.endereco!, [name]: value },
@@ -126,28 +134,28 @@ export default function Pacientes() {
   };
 
   // Enviar dados ao backend
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+      console.log("📤 Enviando paciente:", pacienteAtual); // 👈 Adiciona isso aqui
 
-  const pacienteParaEnviar = {
-    ...pacienteAtual,
+    const pacienteParaEnviar = {
+      ...pacienteAtual,
+    };
 
+    const url = editando
+      ? `http://localhost:8080/paciente/${pacienteAtual.id}`
+      : "http://localhost:8080/paciente";
+    const metodo = editando ? "PUT" : "POST";
+
+    await fetch(url, {
+      method: metodo,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(pacienteParaEnviar),
+    });
+
+    fecharModal();
+    window.location.reload();
   };
-
-  const url = editando
-    ? `http://localhost:8080/paciente/${pacienteAtual.id}`
-    : "http://localhost:8080/paciente";
-  const metodo = editando ? "PUT" : "POST";
-
-  await fetch(url, {
-    method: metodo,
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(pacienteParaEnviar),
-  });
-
-  fecharModal();
-  window.location.reload();
-};
 
   const excluirPaciente = async (id: number) => {
     if (confirm("Deseja realmente excluir este paciente?")) {
@@ -155,7 +163,6 @@ const handleSubmit = async (e: React.FormEvent) => {
       setPacientes((prev) => prev.filter((p) => p.id !== id));
     }
   };
-
 
   return (
     <>
@@ -184,8 +191,9 @@ const handleSubmit = async (e: React.FormEvent) => {
               <h2 className="text-xl font-semibold text-[#7b4ce0]">
                 {p.nome}
               </h2>
-              <p className="text-gray-600 mt-2 text-sm">
-                {p.endereco.logradouro}, {p.endereco.localidade} - {p.endereco.estado}
+              <p className="text-gray-600 mt-2 text-sm text-center">
+                {p.endereco.logradouro}, {p.endereco.localidade} -{" "}
+                {p.endereco.estado}
               </p>
               <div className="flex gap-3 mt-4">
                 <button
@@ -205,11 +213,18 @@ const handleSubmit = async (e: React.FormEvent) => {
           ))}
         </div>
 
-        {/* Modal */}
+        {/* Modal ajustado */}
         {modalAberto && (
-          <div className="fixed inset-0 bg-black/50 flex justify-center items-center">
-            <div className="bg-white p-8 rounded-2xl shadow-xl w-[90%] max-w-lg">
-              <h2 className="text-2xl font-bold text-[#7b4ce0] mb-4">
+          <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex justify-center items-center p-4 overflow-auto">
+            <div className="bg-white p-8 rounded-2xl shadow-2xl w-[90%] max-w-lg max-h-[90vh] overflow-y-auto relative">
+              <button
+                onClick={fecharModal}
+                className="absolute top-3 right-3 text-gray-500 hover:text-[#7b4ce0] text-2xl font-bold"
+              >
+                ×
+              </button>
+
+              <h2 className="text-2xl font-bold text-[#7b4ce0] mb-4 text-center">
                 {editando ? "Editar Paciente" : "Adicionar Paciente"}
               </h2>
 
@@ -246,7 +261,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   name="numero"
                   value={pacienteAtual.numero || ""}
                   onChange={handleChange}
-                  placeholder="numero"
+                  placeholder="Número"
                   className="border p-2 rounded"
                 />
                 <input
@@ -258,7 +273,6 @@ const handleSubmit = async (e: React.FormEvent) => {
                   className="border p-2 rounded"
                 />
 
-                {/* Campos de endereço */}
                 <input
                   type="text"
                   name="cep"
