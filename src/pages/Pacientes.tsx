@@ -38,15 +38,15 @@ export default function Pacientes() {
     },
   });
 
-  // Buscar pacientes do backend
+  // ✅ Buscar pacientes do backend (GET)
   useEffect(() => {
-    fetch("https://vitta-web-backend.onrender.com")
+    fetch("https://vitta-web-backend.onrender.com/paciente")
       .then((res) => res.json())
       .then(setPacientes)
       .catch((err) => console.error("Erro ao carregar pacientes:", err));
   }, []);
 
-  // Abrir modal
+  // 🔹 Abrir modal
   const abrirModal = (paciente?: Paciente) => {
     setEditando(!!paciente);
     setPacienteAtual(
@@ -82,7 +82,7 @@ export default function Pacientes() {
     });
   };
 
-  // Lidar com mudanças nos inputs
+  // 🔹 Lidar com mudanças nos inputs
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
@@ -106,7 +106,7 @@ export default function Pacientes() {
     }
   };
 
-  // Buscar endereço pelo CEP
+  // 🔹 Buscar endereço pelo CEP
   const handleCepBlur = async () => {
     const cep = pacienteAtual.endereco?.cep?.replace(/\D/g, "");
     if (!cep || cep.length !== 8) return;
@@ -133,18 +133,18 @@ export default function Pacientes() {
     }
   };
 
-  // Enviar dados ao backend
+  // 🔹 Enviar dados ao backend (POST ou PUT)
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-      console.log("📤 Enviando paciente:", pacienteAtual); // 👈 Adiciona isso aqui
+    console.log("📤 Enviando paciente:", pacienteAtual);
 
     const pacienteParaEnviar = {
       ...pacienteAtual,
     };
 
     const url = editando
-      ? `http://localhost:8080/paciente/${pacienteAtual.id}`
-      : "http://localhost:8080/paciente";
+      ? `https://vitta-web-backend.onrender.com/paciente/${pacienteAtual.id}`
+      : "https://vitta-web-backend.onrender.com/paciente";
     const metodo = editando ? "PUT" : "POST";
 
     await fetch(url, {
@@ -157,9 +157,12 @@ export default function Pacientes() {
     window.location.reload();
   };
 
+  // 🔹 Excluir paciente
   const excluirPaciente = async (id: number) => {
     if (confirm("Deseja realmente excluir este paciente?")) {
-      await fetch(`http://localhost:8080/paciente/${id}`, { method: "DELETE" });
+      await fetch(`https://vitta-web-backend.onrender.com/paciente/${id}`, {
+        method: "DELETE",
+      });
       setPacientes((prev) => prev.filter((p) => p.id !== id));
     }
   };
@@ -273,6 +276,7 @@ export default function Pacientes() {
                   className="border p-2 rounded"
                 />
 
+                {/* Campos de endereço */}
                 <input
                   type="text"
                   name="cep"
