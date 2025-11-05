@@ -40,7 +40,7 @@ export default function Pacientes() {
 
   // Buscar pacientes do backend
   useEffect(() => {
-    fetch("http://localhost:8080/paciente")
+    fetch("https://vitta-web-backend.onrender.com")
       .then((res) => res.json())
       .then(setPacientes)
       .catch((err) => console.error("Erro ao carregar pacientes:", err));
