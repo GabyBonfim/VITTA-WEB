@@ -38,7 +38,6 @@ export default function Pacientes() {
     },
   });
 
-  // ✅ Buscar pacientes do backend (GET)
   useEffect(() => {
     fetch("https://vitta-web-backend.onrender.com/paciente")
       .then((res) => res.json())
@@ -46,7 +45,6 @@ export default function Pacientes() {
       .catch((err) => console.error("Erro ao carregar pacientes:", err));
   }, []);
 
-  // 🔹 Abrir modal
   const abrirModal = (paciente?: Paciente) => {
     setEditando(!!paciente);
     setPacienteAtual(
@@ -82,7 +80,6 @@ export default function Pacientes() {
     });
   };
 
-  // 🔹 Lidar com mudanças nos inputs
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
@@ -106,7 +103,6 @@ export default function Pacientes() {
     }
   };
 
-  // 🔹 Buscar endereço pelo CEP
   const handleCepBlur = async () => {
     const cep = pacienteAtual.endereco?.cep?.replace(/\D/g, "");
     if (!cep || cep.length !== 8) return;
@@ -133,7 +129,6 @@ export default function Pacientes() {
     }
   };
 
-  // 🔹 Enviar dados ao backend (POST ou PUT)
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("📤 Enviando paciente:", pacienteAtual);
@@ -157,7 +152,6 @@ export default function Pacientes() {
     window.location.reload();
   };
 
-  // 🔹 Excluir paciente
   const excluirPaciente = async (id: number) => {
     if (confirm("Deseja realmente excluir este paciente?")) {
       await fetch(`https://vitta-web-backend.onrender.com/paciente/${id}`, {
