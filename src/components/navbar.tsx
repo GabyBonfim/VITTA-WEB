@@ -8,7 +8,7 @@ export default function Navbar() {
     ["/homepage", "Minha VITTA"],
     ["/faq", "Perguntas frequentes"],
     ["/ajuda", "Ajuda"],
-    ["/Pacientes", "Dados Médicos"],
+    ["/Pacientes", "Espaço Med"],
     ["/integrantes", "Sobre Nós"],
   ];
 
