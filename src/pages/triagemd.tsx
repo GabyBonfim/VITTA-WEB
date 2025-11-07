@@ -45,7 +45,7 @@ export default function Triagemd() {
     console.log({ tempo, descricao, nivelDor, situacao, medicamento, reincidente });
 
     setTimeout(() => {
-      navigate("/");
+      navigate("/homepage");
     }, 2000);
   };
 

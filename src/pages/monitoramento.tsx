@@ -42,7 +42,7 @@ export default function Monitoramento() {
     localStorage.setItem("monitoramento", JSON.stringify(dadosMonitoramento));
     
     setTimeout(() => {
-      navigate("/");
+      navigate("/homepage");
     }, 2000);
   };
 
