@@ -146,13 +146,6 @@ Abra seu navegador e acesse a URL que o terminal informar, geralmente: `http://l
 
 ---
 
-## 💡 Possíveis Melhorias Futuras
-
-* **Integração com REDCap:** Conexão com a plataforma REDCap para obter dados precisos de pacientes do Hospital das Clínicas (HC), possibilitando que médicos realizem o monitoramento de saúde de pacientes elegíveis a telemedicina.
-* **Internacionalização (i18n):** Implementação de suporte a múltiplos idiomas.
-
----
-
 ## 🎨 Detalhes Visuais & Identidade
 
 * **Logotipo:** `images/logotipo-vitta.png`
@@ -180,4 +173,5 @@ Se você curtiu o projeto, ou encontrou algo que possa ser melhorado, **deixe se
 | :--- | :--- |
 | **Repositório do Projeto** | [GitHub - VITTA-WEB](https://github.com/GabyBonfim/VITTA-WEB.git) |
 | **Vídeo de Apresentação sprint 4** | [Vídeo da Solução no YouTube](https://youtu.be/BzSB1DgoSYI) |
-| **Vídeo de Apresentação sprint 3** | [Vídeo da Solução no YouTube](https://youtu.be/dGqbTyqBrpE?si=0hnUSR4Ra9QSCQMP) |
+| **Projeto - Vercel** | [Deploy no Vercel](https://vitta-web.vercel.app/) |
+| **Projeto - Render** | [Deploy no Vercel](https://vitta-web-backend.onrender.com) |
