@@ -179,4 +179,5 @@ Se você curtiu o projeto, ou encontrou algo que possa ser melhorado, **deixe se
 | Descrição | Link |
 | :--- | :--- |
 | **Repositório do Projeto** | [GitHub - VITTA-WEB](https://github.com/GabyBonfim/VITTA-WEB.git) |
-| **Vídeo de Apresentação** | [Vídeo da Solução no YouTube](https://youtu.be/dGqbTyqBrpE?si=0hnUSR4Ra9QSCQMP) |
+| **Vídeo de Apresentação sprint 4** | [Vídeo da Solução no YouTube](https://youtu.be/BzSB1DgoSYI) |
+| **Vídeo de Apresentação sprint 3** | [Vídeo da Solução no YouTube](https://youtu.be/dGqbTyqBrpE?si=0hnUSR4Ra9QSCQMP) |
