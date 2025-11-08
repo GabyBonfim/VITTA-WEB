@@ -174,4 +174,4 @@ Se você curtiu o projeto, ou encontrou algo que possa ser melhorado, **deixe se
 | **Repositório do Projeto** | [GitHub - VITTA-WEB](https://github.com/GabyBonfim/VITTA-WEB.git) |
 | **Vídeo de Apresentação sprint 4** | [Vídeo da Solução no YouTube](https://youtu.be/BzSB1DgoSYI) |
 | **Projeto - Vercel** | [Deploy no Vercel](https://vitta-web.vercel.app/) |
-| **Projeto - Render** | [Deploy no Vercel](https://vitta-web-backend.onrender.com) |
+| **Projeto - Render** | [Deploy no Render](https://vitta-web-backend.onrender.com) |
